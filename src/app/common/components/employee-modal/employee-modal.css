@@ -1,0 +1,112 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: white;
+    border-radius: 8px;
+    width: 400px;
+}
+
+.modal p {
+    margin: 0;
+}
+
+.modal_header {
+    background: #ae3a3a;
+    color: white;
+    padding: 20px 10px;
+}
+
+.modal_header p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.emp_form {
+    padding: 10px;
+}
+
+.input_fields {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.input_fields label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.input_fields input {
+    padding: 5px 5px;
+}
+
+.team_role {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.team_role label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.emp_select {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.team_search, .role_search {
+    position: relative;
+    width: 150px;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.team_search:hover, .role_search:hover {
+    border: 1px solid #ae3a3a;
+}
+
+.actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.actions button {
+    border-radius: 5px;
+}
+
+.save_btn {
+    padding: 5px 15px;
+    background: #ae3a3a;
+    color: white;
+}
+
+.save_btn:hover {
+    background: #8c2525;
+}
+
+.save_btn:disabled {
+    background: grey;
+    cursor: not-allowed;
+}
+
+.error_msg {
+    color: red;
+    font-size: 12px;
+}

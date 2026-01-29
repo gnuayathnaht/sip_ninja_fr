@@ -1,0 +1,81 @@
+.nav_container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.type_search {
+    position: relative;
+    width: 200px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.type_search:focus {
+    outline: none;
+    border-color: #ae3a3a;
+    box-shadow: 0 0 5px rgba(174, 58, 58, 0.5);
+}
+
+.type_search:hover {
+    border-color: #ae3a3a;
+}
+
+.team_search, .role_search {
+  position: relative;
+  width: 200px;
+}
+
+/* Select */
+.team_search select, .role_search select {
+  width: 100%;
+  padding: 6px 36px 6px 10px; /* space for clear */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 14px;
+  appearance: none;   /* removes native arrow (optional) */
+}
+
+/* Hover / Focus */
+.team_search select:hover,
+.role_search select:hover {
+  border-color: #ae3a3a;
+  outline: none;
+}
+
+/* Clear button */
+.clear_team_btn, .clear_role_btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #ae3a3a;
+  line-height: 1;
+}
+
+.clear_team_btn:hover {
+  opacity: 0.8;
+}
+
+.create_emp_btn {
+    border: none;
+    padding: 7px 20px;
+    background: #ae3a3a;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.create_emp_btn:hover {
+    background-color: #8c2525;
+}

@@ -1,0 +1,55 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ae3a3a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.app_logo_text {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;              /* dark text */
+    margin: 0;
+    letter-spacing: 5px;
+    cursor: pointer;
+}
+
+.user_info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user_info img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.username {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.logout {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  background: white;
+  border: none;
+}
+
+.logout:hover {
+  background: #e11d48;
+  color: #fff;
+}

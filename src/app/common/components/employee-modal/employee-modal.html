@@ -1,0 +1,86 @@
+@if (isOpen) {
+<div class="backdrop">
+  <div class="modal">
+    <div class="modal_header">
+      <p>{{ isEdit ? "Edit Sip Employee" : "Create Sip New Employee" }}</p>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="submit()" class="emp_form">
+      <div class="input_fields">
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" />
+        @if (form.get('name')?.invalid && form.get('name')?.touched && form.get('name')?.dirty) {
+        <p class="error_msg">Please enter a valid name (min 2 characters).</p>
+        }
+      </div>
+      <div class="input_fields">
+        <label for="email">Email</label>
+        <input type="email" formControlName="email" />
+        @if (form.get('email')?.invalid && form.get('email')?.touched && form.get('email')?.dirty) {
+          <p class="error_msg">Please enter a valid email address.</p>
+        }
+      </div>
+      <div class="input_fields">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" />
+        @if (form.get('password')?.invalid && form.get('password')?.touched && form.get('password')?.dirty) {
+        <p class="error_msg">Please enter a valid password.</p>
+        }
+      </div>
+      <div class="team_role">
+        <label>Team & Role</label>
+        <div class="emp_select">
+          <select class="team_search" formControlName="teamId">
+            <option value="" disabled>Select Team</option>
+            @for (team of teams(); track $index) {
+            <option value="{{ team.id }}">{{ team.name }}</option>
+            }
+          </select>
+          <select class="role_search" formControlName="roleId">
+            <option value="" disabled>Select Role</option>
+            @for (role of roles(); track $index) {
+            <option value="{{ role.id }}">{{ role.name }}</option>
+            }
+          </select>
+        </div>
+      </div>
+      <div class="input_fields">
+        <label for="image">Profile Image</label>
+        <input type="file" (change)="onFileChange($event)" />
+        @if (form.get('image')?.invalid && form.get('image')?.touched && form.get('image')?.dirty) {
+        <p class="error_msg">Please upload a profile image.</p>
+        }
+      </div>
+      <div class="input_fields">
+        <label for="phone">Phone</label>
+        <input type="text" formControlName="phone" />
+        @if (form.get('phone')?.invalid && form.get('phone')?.touched && form.get('phone')?.dirty) {
+        <p class="error_msg">
+          Please enter a valid phone number (8-15 digits).
+        </p>
+        }
+      </div>
+      <div class="input_fields">
+        <label for="address">Address</label>
+        <textarea
+          name="address"
+          id="address"
+          formControlName="address"
+        ></textarea>
+        @if (form.get('address')?.invalid && form.get('address')?.touched && form.get('address')?.dirty) {
+        <p class="error_msg">
+          Please enter a valid address.
+        </p>
+        }
+      </div>
+      <div class="actions">
+        <button type="button" (click)="close()" class="cancel_btn">
+          Cancel
+        </button>
+        <button type="submit" [disabled]="form.invalid" class="save_btn">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+}

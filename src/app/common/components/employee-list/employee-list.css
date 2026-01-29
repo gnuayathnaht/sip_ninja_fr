@@ -1,0 +1,95 @@
+.emp_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background: #f6f6f6;
+}
+
+/* Card */
+.emp_card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px 16px 18px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-top: 4px solid #ae3a3a;
+}
+
+.emp_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.card_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.card_header img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ae3a3a;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actions button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.actions .edit {
+  color: #ae3a3a;
+}
+
+.actions .delete {
+  color: #555;
+}
+
+.actions button:hover {
+  background: rgba(174, 58, 58, 0.1);
+}
+
+/* Text */
+.emp_fields,
+.emp_status {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.emp_fields span {
+  font-weight: 500;
+  color: #222;
+}
+
+/* Status */
+.emp_status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.active_status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(174, 58, 58, 0.1);
+  color: rgb(0, 74, 0);
+}

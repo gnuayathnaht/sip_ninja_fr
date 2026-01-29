@@ -1,0 +1,44 @@
+<div class="nav_container">
+  <input
+    type="text"
+    placeholder="Search employees..."
+    class="type_search"
+    [formControl]="nameSearchControl"
+  />
+  <div class="team_search">
+    <select [formControl]="teamSearchControl">
+      <option value="" disabled selected>Select Team</option>
+      @for (team of teams(); track $index) {
+        <option value="{{ team.id }}">{{ team.name }}</option>
+      }
+    </select>
+    @if (teamSearchControl.value) {
+      <button class="clear_team_btn" (click)="clearTeamSearchControl()">
+        ✕
+      </button>
+    }
+  </div>
+  <div class="role_search">
+    <select [formControl]="roleSearchControl">
+      <option value="" disabled selected>Select Role</option>
+      @for (role of roles(); track $index) {
+        <option value="{{ role.id }}">{{ role.name }}</option>
+      }
+    </select>
+    @if (roleSearchControl.value) {
+      <button class="clear_role_btn" (click)="clearRoleSearchControl()">
+        ✕
+      </button>
+    }
+  </div>
+  @if (isAdmin) {
+    <button (click)="showModal = true" class="create_emp_btn">
+      Create New Employee
+    </button>
+  }
+  <app-employee-modal
+    [isOpen]="showModal"
+    (closed)="showModal = false"
+    (submitted)="handleSubmit($event)"
+  ></app-employee-modal>
+</div>

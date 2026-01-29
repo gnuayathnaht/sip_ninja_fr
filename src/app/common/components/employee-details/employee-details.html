@@ -1,0 +1,41 @@
+<h2 mat-dialog-title class="title">
+  <button class="close-btn" mat-dialog-close>
+    ✕
+  </button>
+</h2>
+
+<mat-dialog-content class="content">
+
+  <!-- Profile -->
+  <div class="profile">
+    <div class="avatar">
+      <img [src]="'http://localhost:8080/api/employees/profile_image/' + employee.name" alt="">
+    </div>
+
+    <h3>{{ employee.name }}</h3>
+    <p class="position">{{ employee.roles[0]?.name }}</p>
+  </div>
+
+  <!-- Details -->
+  <div class="details">
+    <div class="row">
+      <mat-icon>email</mat-icon>
+      <span>{{ employee.email }}</span>
+    </div>
+
+    <div class="row">
+      <mat-icon>phone</mat-icon>
+      <span>{{ employee.phoneNo }}</span>
+    </div>
+
+    <div class="row">
+      <mat-icon>location_on</mat-icon>
+      <span>{{ employee.address }}</span>
+    </div>
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-flat-button class="close-action" style="background-color: #ae3a3a;" (click)="onClose()">Close</button>
+</mat-dialog-actions>

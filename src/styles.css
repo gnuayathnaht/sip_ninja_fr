@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* INFO */
+.mat-mdc-snack-bar-container.toast-info .mdc-snackbar__surface {
+  background: #2196f3;
+  color: white;
+  opacity: 0.8;
+  border-radius: 5px;
+}
+
+/* SUCCESS */
+.mat-mdc-snack-bar-container.toast-success .mdc-snackbar__surface {
+  background: #4caf50;
+  color: white;
+  opacity: 0.8;
+  border-radius: 5px;
+}
+
+/* ERROR */
+.mat-mdc-snack-bar-container.toast-error .mdc-snackbar__surface {
+  background: #f44336 !important;
+  color: white !important;
+  opacity: 0.5 !important;
+  border-radius: 5px !important;
+}

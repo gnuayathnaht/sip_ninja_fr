@@ -1,0 +1,62 @@
+<div class="emp_container">
+  @for (emp of emps(); track $index) {
+    <div class="emp_card" (click)="openEmployeeDialog(emp)">
+      <div class="card_header">
+        <img
+          [src]="'http://localhost:8080/api/employees/images/' + emp.imageName"
+        />
+        @if (isAdmin) {
+          <div class="actions">
+            <button class="edit" (click)="onEditEmp(emp)">
+              <i class="fa-regular fa-pen-to-square"></i>
+            </button>
+            <button class="delete" (click)="onDeleteEmp(emp.id)">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+          </div>
+        }
+      </div>
+      <p class="emp_fields">Name: {{ emp.name }}</p>
+      <p class="emp_fields">
+        Position:
+        <span>
+          @for (role of emp.roles; track $index; let isLast = $last) {
+            <span
+              >{{ role.name }} <span>{{ isLast ? "" : ", " }}</span></span
+            >
+          }
+        </span>
+      </p>
+      <p class="emp_fields">
+        Team:
+        <span>
+          @for (team of emp.teams; track $index; let isLast = $last) {
+            <span
+              >{{ team.name }} <span>{{ isLast ? "" : ", " }}</span></span
+            >
+          }
+        </span>
+      </p>
+      <p class="emp_status">
+        Status:
+        <span class="active_status">{{
+          emp.status ? "Active" : "Inactive"
+        }}</span>
+      </p>
+    </div>
+  }
+  <app-employee-modal
+    [isOpen]="showEditModal"
+    (closed)="showEditModal = false"
+    (submitted)="handleEdit($event)"
+    [isEdit]="true"
+    [empData]="editEmpData()"
+  >
+  </app-employee-modal>
+  <app-delete-modal
+    [isOpen]="showDeleteModal"
+    (closed)="showDeleteModal = false"
+    (deleted)="handleDelete()"
+  >
+  </app-delete-modal>
+</div>

@@ -1,0 +1,16 @@
+@if (isOpen) {
+<div class="backdrop">
+  <div class="modal">
+    <div class="modal_header">
+      <p>Confirm Employee Deletion</p>
+    </div>
+    <div class="modal_body">
+      <p>Are you sure you want to delete this employee?</p>
+      <div class="actions">
+        <button (click)="handleClose()" class="cancel_btn">Cancel</button>
+        <button (click)="handleDelete()" class="delete_btn">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+}
