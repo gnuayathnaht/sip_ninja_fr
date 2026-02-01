@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://sip_ninja_bk.up.railway.app'
+  apiUrl: 'https://sipninjabk-production.up.railway.app'
 };
