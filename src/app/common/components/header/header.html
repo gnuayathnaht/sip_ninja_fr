@@ -3,7 +3,7 @@
     <p class="app_logo_text" (click)="getAllEmployees()">Sip Ninja</p>
   </div>
   <div class="user_info">
-    <img [src]="'http://localhost:8080/api/employees/profile_image/' + username" alt="Logo" />
+    <img [src]="'https://sipninjabk-production.up.railway.app/profile_image/' + username" alt="Logo" />
     <p class="username">{{ username }}</p>
     <button class="logout" (click)="logout()">Logout</button>
   </div>
